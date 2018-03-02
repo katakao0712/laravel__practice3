@@ -2,7 +2,7 @@
 <!-- Form Error List -->
 <div class="alert alert-danger">
   <div>
-    <strong>入 力 した 文字 を 修正 してください。</strong>
+    <strong>入力した文字を修正してください。</strong>
 <div>
   <ul>
     @foreach ($errors->all() as $error)
