@@ -25,15 +25,27 @@
             
             <!-- 本のタイトル -->
             <div class="form-group">
-                <label for="book" class="col-sm-2 control-label">タイトル</label>
+                <label for="name" class="col-sm-2 control-label">タイトル</label>
                 <div class="col-sm-5">
                     <input type="text" name="item_name" id="book-name" class="form-control">
                 </div>
             </div>
             <div class="form-group">
-                <label for="book" class="col-sm-2 control-label">金額</label>
+                <label for="amount" class="col-sm-2 control-label">金額</label>
                 <div class="col-sm-5">
                     <input type="text" name="item_amount" id="book-amount" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="number" class="col-sm-2 control-label">数</label>
+                <div class="col-sm-5">
+                    <input type="text" name="item_number" id="book-number" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="published" class="col-sm-2 control-label">購入日</label>
+                <div class="col-sm-5">
+                    <input type="date" name="published" id="book-published" class="form-control">
                 </div>
             </div>
 
@@ -80,6 +92,19 @@
                                     <div>{{ $book->published }}</div>
                                 </td>
                                 <!-- 本: 削除ボタン -->
+                                
+
+                                <td>
+                                    <form action="{{ url('book/'.$book->id)}}" method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE')}}
+                                        <button type="sublit" class="btn btn-danger">
+                                            <i class="glyphicon glyphicon-trash"></i>削除
+                                        </button>
+                                    </form>
+                                    </form>
+                                </td>
+                                
                             </tr>
                          @endforeach
                     </tbody>
