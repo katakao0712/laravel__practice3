@@ -33,13 +33,13 @@
             <div class="form-group">
                 <label for="amount" class="col-sm-2 control-label">金額</label>
                 <div class="col-sm-5">
-                    <input type="text" name="item_amount" id="book-amount" class="form-control">
+                    <input type="text" name="item_number" id="book-number" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label for="number" class="col-sm-2 control-label">数</label>
                 <div class="col-sm-5">
-                    <input type="text" name="item_number" id="book-number" class="form-control">
+                    <input type="text" name="item_amount" id="book-amount" class="form-control">
                 </div>
             </div>
             <div class="form-group">
@@ -93,12 +93,21 @@
                                 </td>
                                 <!-- 本: 削除ボタン -->
                                 
+                                <td>
+                                    <form action="{{ url('booksedit/'.$book->id)}}" method="POST">
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="glyphicon glyphicon-pencil"></i>更新
+                                        </button>
+                                    </form>
+                                    </form>
+                                </td>
 
                                 <td>
                                     <form action="{{ url('book/'.$book->id)}}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE')}}
-                                        <button type="sublit" class="btn btn-danger">
+                                        <button type="submit" class="btn btn-danger">
                                             <i class="glyphicon glyphicon-trash"></i>削除
                                         </button>
                                     </form>

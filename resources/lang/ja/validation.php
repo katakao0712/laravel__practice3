@@ -106,7 +106,7 @@ return [
     'attributes' => [
     'item_name'=>'本の名前',
     'item_number'=>'金額',
-    'item_amount'=>'本の冊数',
+    'item_amount'=>'冊数',
     'published'=>'公開日',
     ],
 
